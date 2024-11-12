@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block 'head' %}
+    <link rel="stylesheet" href="{% static 'usuarios/css/usuarios.css' %}">
+{% endblock 'head' %}
+
+{% block 'body' %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex justify-content-center position-absolute top-50 start-50 translate-middle">
+                <div class="col-md-3">
+                    <section class="cont-logo">
+                        <img class="logo" src="{% static 'geral/img/CBA_LOGO.png' %}">
+                    </section>
+                    <section class="cont-logo">
+                        <label class="text-logo"> <h1>Fazer login</h1></label>
+                    </section>
+                    <br>
+                    
+                    <div class="col-md-auto">
+                        <div class="card-body">
+                            <form action="{% url 'login' %}" method="POST"> {% csrf_token %}
+                                {% if messages %}
+                                    <br>
+                                    {% for message in messages %}
+                                        <section class="alert {{message.tags}}">
+                                            {{message}}
+                                        </section>
+                                    {% endfor %}
+                                {% endif %}
+                                <br>
+                                <input type="text" name="username" id="" class="form-control form-control-lg p-3" placeholder="Username ...">
+                                <input type="password" name="senha" class="form-control form-control-lg p-3 mt-1" placeholder="Digite sua senha ...">
+                                <br>
+                                <br>
+                                <input type="submit" value="Entrar" class="btn btn-lg btn-primary p-3 w-100">
+                            </form>      
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock 'body' %}
