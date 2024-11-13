@@ -61,10 +61,10 @@
                         </a>
                     </li>
 
-                    <li>
-                        <a href="" class="nav-link text-white ms-5 px-1">
-                        <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"/></svg>
-                        {{ request.user }}
+                    <li class="nav-item">
+                        <a href="" class="btn-width btn btn-sm border border-1 border-white text-white ms-5 px-1">
+                            <ion-icon name="person-outline" class="bi d-block mx-auto mb-1 fs-4"></ion-icon>
+                            {{ request.user }}
                         </a>
                     </li>
 
@@ -79,7 +79,7 @@
             </form>
 
             <div class="text-end">
-                <a href="{% url 'sair'%}"class="btn btn-primary">SAIR</a>
+                <a href="{% url 'sair'%}"class="btn-width btn btn-primary">SAIR</a>
             </div>
         </div>
     </div>
@@ -143,7 +143,5 @@
     
     </div>
 </main>
-
-
 
 {% endblock %}

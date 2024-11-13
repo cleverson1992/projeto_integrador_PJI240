@@ -12,7 +12,7 @@ class Localidades(models.Model):
 class DadosProdutos(models.Model):
     produto = models.CharField(max_length=30)
     modelo = models.CharField(max_length=100)
-    data = models.DateField(auto_now_add = True)
+    data = models.DateTimeField(auto_now_add = True)
     user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
     localidade = models.ForeignKey(Localidades, on_delete=models.DO_NOTHING)
     quantidade = models.IntegerField()
